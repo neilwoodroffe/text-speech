@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!--meta name="viewport" content="width=device-width"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Text to Speech</title>
+
+    <link rel="stylesheet" href="style.css">
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <style>
+  body {
+  text-align: center;
+  margin: auto;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+
+.txt, form > div {
+  display: block;
+  margin: 0 auto;
+  font-family: sans-serif;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.txt {
+  width: 80%;
+  resize: none;
+}
+
+
+form > div {
+  width: 81%;
+}
+
+.txt, form > div {
+  margin-bottom: 10px;
+  overflow: auto;
+}
+
+.clearfix {
+  clear: both;
+}
+
+label {
+  float: left;
+  width: 10%;
+  line-height: 1.5;
+}
+/*
+.rate-value, .pitch-value {
+  float: right;
+  width: 5%;
+  line-height: 1.5;
+}
+*/
+#rate, #pitch {
+  /*float: right;*/
+  width: 65%;
+}
+
+.controls {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.controls button {
+  padding: 10px;
+}
+
+.button {
+  border: 2px solid  #0275d8;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background:#0275d8;
+  }
+
+li {
+  text-align: left;
+}
+  </style>
+  </head>
+
+  <body>  
+    <nav class="navbar navbar-dark bg-primary">
+    <h2><a href="#two"><img src="img/menu.svg"></a>&nbsp;Text to Speech</h2>
+    <select>
+
+    </select>
+    </nav>
+    <br>
+    <form>
+    <textarea type="text" class="txt" onfocus="this.value=''" placeholder="Enter Text Here"></textarea>
+    <div>
+      <br>
+      <label for="rate"><strong>Rate</strong>&nbsp;</label><input type="range" min="0.5" max="2" value="1" step="0.1" id="rate">
+      <div class="rate-value">1</div>
+      <div class="clearfix"></div>
+    </div>
+    <br>
+    <div>
+      <label for="pitch"><strong>Pitch</strong>&nbsp;</label><input type="range" min="0" max="2" value="1" step="0.1" id="pitch">
+      <div class="pitch-value">1</div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="controls">
+      <button class="button" id="play" type="submit">Speak</button>
+    </div>
+    </form>
+    <div class="page" id="two">
+        <h1>Instructions</h1>
+        <ul>
+        <li>Enter or paste some text in the input box and then press the "Speak" BUTTON to hear it</li>
+        <li>Change the voice by using the dropdown menu</li>
+        <li>You can change the Rate and Pitch of the voice by moving the sliders</li>
+        <li>There are a different variety of voices depending on the browser that you are using</li>
+        <li>Select a voice that you like, matches your nationality or best suits your personality</li>
+        </ul>
+        <a href="#"><img src="img/back-arrow.png"></a>
+
+      </div>
+        <script src="script.js"></script>
+  
+  </body>
+</html>
